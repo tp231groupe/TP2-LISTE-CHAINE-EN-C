@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../lib/linkedList.h"
-#include "../lib/utils.h"
 
 
 

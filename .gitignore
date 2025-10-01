@@ -1,0 +1,11 @@
+src/*
+!src/linkedList.c
+!src/test2.c
+
+lib/*
+!lib/linkedList.h
+
+README.md
+rapport.md
+
+!docs/*
