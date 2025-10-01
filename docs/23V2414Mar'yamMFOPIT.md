@@ -2,9 +2,9 @@
 
 *Informations Personnelles*
 
-Nom: `MFOPIT MVU`
-Prenom : `MAR'YAM`
-Matricule: `23V2414`
+- Nom: `MFOPIT MVU`
+- Prenom : `MAR'YAM`
+- Matricule: `23V2414`
 
 ## Objectif
 Inserer un nouvel element dans une liste doublement chainee **tout en maintenant l'ordre croissant** des elements.
@@ -31,7 +31,8 @@ struct Node* suiv;  // pointeur vers le noeud suivant
    - si la valeur est superieure a tous les elements ->insertion en queue
    - sinon->insertion entre deux noeuds.
 
-* Fonction complete *
+## Fonction complete 
+
   Node* inserer_trie_double(Node* tete, int donnee){
     Node*nouveau=malloc(sizeof(Node));
     if(!nouveau)return tete;
