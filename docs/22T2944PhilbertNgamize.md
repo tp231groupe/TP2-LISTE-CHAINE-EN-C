@@ -1,4 +1,4 @@
-# Opérations Matricielles
+# Seance 1: Opérations Matricielles
 
 > Informations personnelles
 
@@ -175,4 +175,6 @@ Produit positif C = 0 0
 ```
 
 > On transforme le produit en une sorte de **matrice “oui/non”** selon le signe des valeurs. C’est très pratique pour certaines applications logiques.
+
+
 
