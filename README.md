@@ -247,6 +247,6 @@ Ce projet a été développé par le groupe de TD/TP, sous la supervision du Pr 
 
 | Nom et Prénom | Matricule | Rôle Principal | Compte GitHub |
 | :--- | :--- | :--- | :--- |
-| **Mar'yam MFOPIT** | 23V23H00 | Lead (intégration et test) | [https://github.com/maryam2379](https://github.com/maryam2379) |
+| **Mar'yam MFOPIT** | 23V2414 | Lead (intégration et test) | [https://github.com/maryam2379](https://github.com/maryam2379) |
 | **Philbert NGAMIZE** | 22T2944 | Membre (Insertion en tête et queue de liste chaînée circulaire) | [https://github.com/nik-p12](https://github.com/nik-p12) |
 | **Caleb KEMMOE** | 24H2300 | Membre (Insertion en queue de liste doublement chaînée circulaire) | [https://github.com/kemmoebugincaleb-cell](https://github.com/kemmoebugincaleb-cell) |
