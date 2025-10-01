@@ -1,40 +1,180 @@
-## **22T2944-Philbert-NGAMIZE.md**
+# Seance 1: Opérations Matricielles
 
-> Rapport d'avancement individuel (INF231 - TP/TD 2)
+> Informations personnelles
 
-### **Séance 1 : Dimanche 27/09/2025**
+* Noms & Prénoms : Ngamize Ineza Kwizera Philbert
 
-| Section | Détails de la Séance |
-| :--- | :--- |
-| **Durée Estimée** | 3 heures |
-| **Objectif Principal** | Définir la structure de la liste simple circulaire (`list`) et commencer l'implémentation de la fonction d'**insertion en tête : `insertHeadCircular()`**. |
-| **Avancement** | **Implémentation du cas "Liste Vide" finalisée.** J'ai utilisé la structure `node` et le type `list`. J'ai écrit la logique pour allouer un nouveau nœud et gérer le cas où la liste est initialement vide : le nouveau nœud se pointe sur lui-même (`next = new_node`). |
-| **Tâches Accomplies** | * Définition des types (`node`, `list`) selon `linkedList.h`. * Écriture de la fonction d'allocation de nœud. * Implémentation complète et vérification du cas *Liste Vide*. |
-| **Difficultés** | Aucune difficulté majeure. Le reste de la séance a été consacré à planifier l'algorithme pour le cas *Liste Non Vide*, qui nécessite de trouver le dernier élément. |
-| **À Faire (Prochaine Séance)** | Implémenter le cas général de `insertHeadCircular()` (liste non vide). |
+* Matricule : 22T2944
 
----
+* Rôle dans le projet : Responsable de la partie operation Matricielle
 
-### **Séance 2 : Lundi 28/09/2025**
+## Contexte
 
-| Section | Détails de la Séance |
-| :--- | :--- |
-| **Durée Estimée** | 4 heures |
-| **Objectif Principal** | Finaliser et tester la fonction `insertHeadCircular()` pour le cas "Liste Non Vide". |
-| **Avancement** | **Fonction `insertHeadCircular()` finalisée et opérationnelle.** La logique est implémentée en deux étapes clés : 1. Parcourir la liste pour localiser le **dernier nœud** (celui qui pointe actuellement vers la tête). 2. Mettre à jour les pointeurs : le `next` du nouveau nœud pointe vers l'ancienne tête, puis le `next` du dernier nœud pointe vers le nouveau nœud. |
-| **Tâches Accomplies** | * Implémentation de la boucle de parcours itérative pour trouver le **dernier nœud** (`tail`). * Mise à jour correcte des deux pointeurs essentiels. * Écriture d'une fonction d'affichage temporaire pour valider le comportement circulaire. |
-| **Difficultés** | J'ai eu une **erreur de segmentation** due à une mauvaise condition d'arrêt dans la recherche du dernier nœud, initialement. J'ai corrigé en m'assurant de référencer l'ancienne tête correctement avant de la remplacer par le nouveau nœud. |
-| **À Faire (Prochaine Séance)** | Rédiger une série de tests unitaires pour `insertHeadCircular()` et commencer l'implémentation de la fonction d'insertion en queue. |
+Pour ce projet, j’étais responsable de la partie **matrices**.
+L’idée était de manipuler des matrices en C, de mettre en pratique les opérations classiques et de vérifier la compatibilité des dimensions avant toute opération.
+C’était un bon exercice pour combiner **mathématiques** et **programmation dynamique en C**.
 
 ---
 
-### **Séance 3 : Mardi 29/09/2025**
+## Somme de deux matrices
 
-| Section | Détails de la Séance |
-| :--- | :--- |
-| **Durée Estimée** | 3 heures |
-| **Objectif Principal** | Compléter les tests pour l'insertion en tête et implémenter la fonction d'**insertion en queue : `insertTailCircular()`**. |
-| **Avancement** | **Tests de `insertHeadCircular` validés. `insertTailCircular` implémentée.** J'ai réutilisé la logique de parcours du dernier nœud (développée lundi) pour l'insertion en queue. La fonction est terminée pour les cas liste vide et non vide. |
-| **Tâches Accomplies** | * Création de scénarios de tests dans `test_list.c` pour valider l'insertion en tête. * Implémentation complète de `insertTailCircular()` : le nouveau nœud se connecte à l'ancienne tête, et le dernier nœud (`tail`) se connecte au nouveau nœud. |
-| **Difficultés** | Aucune difficulté majeure. Le travail précédent a simplifié l'approche pour l'insertion en queue. |
-| **À Faire (Prochaine Séance)** | Tester `insertTailCircular()` et passer à la prochaine exigence de l'exercice : l'**insertion dans une liste triée** (`insertSortedList`) ou la **suppression d'occurrences** (`deleteOccurrences`). |
+### Comment ça marche
+
+Avant d’additionner deux matrices, il faut s’assurer qu’elles ont **la même taille**. Ensuite, on additionne les éléments **un par un** pour construire une nouvelle matrice résultat.
+
+### Pseudo-code
+
+```
+fonction somme_matrices(A, B)
+    si dimensions(A) ≠ dimensions(B)
+        afficher "Erreur"
+        arrêter
+    C ← matrice de même taille que A
+    pour chaque ligne i
+        pour chaque colonne j
+            C[i][j] ← A[i][j] + B[i][j]
+    retourner C
+```
+
+### Exemple
+
+```
+A = 1 2
+    3 4
+
+B = 5 6
+    7 8
+
+C = A + B
+Résultat :
+C = 6  8
+    10 12
+```
+
+> Ici, chaque élément de `C` est juste la somme des éléments correspondants de `A` et `B`.
+
+---
+
+## Produit de deux matrices
+
+### Comment ça marche
+
+Le produit n’est pas un simple élément par élément.
+Il faut que le **nombre de colonnes de la première matrice soit égal au nombre de lignes de la deuxième**.
+Chaque élément du résultat est obtenu en multipliant les éléments d’une ligne par ceux d’une colonne, puis en les additionnant.
+
+### Pseudo-code
+
+```
+fonction produit_matrices(A, B)
+    si cols(A) ≠ rows(B)
+        afficher "Erreur"
+        arrêter
+    C ← matrice de taille rows(A) × cols(B)
+    pour i de chaque ligne de A
+        pour j de chaque colonne de B
+            C[i][j] ← 0
+            pour k de 0 à cols(A)-1
+                C[i][j] += A[i][k] * B[k][j]
+    retourner C
+```
+
+### Exemple
+
+```
+A = 1 2
+    3 4
+
+B = 5 6
+    7 8
+
+C[0][0] = 1*5 + 2*7 = 19
+C[0][1] = 1*6 + 2*8 = 22
+C[1][0] = 3*5 + 4*7 = 43
+C[1][1] = 3*6 + 4*8 = 50
+
+Résultat :
+C = 19 22
+    43 50
+```
+
+> Ici, on voit que chaque élément de `C` résulte d’une combinaison de ligne et colonne. C’est un peu comme un mélange coordonné des valeurs.
+
+---
+
+## Multiplication par un scalaire
+
+### Comment ça marche
+
+Cette opération est plus simple : **on multiplie chaque élément de la matrice par un nombre entier**.
+
+### Pseudo-code
+
+```
+fonction multiplication_scalaire(A, m)
+    C ← matrice de même taille que A
+    pour chaque ligne i
+        pour chaque colonne j
+            C[i][j] = A[i][j] * m
+    retourner C
+```
+
+### Exemple
+
+```
+A = 1 2
+    3 4
+
+m = 3
+
+Résultat :
+C = 3 6
+    9 12
+```
+
+> Ici, chaque valeur est juste multipliée par 3. Très direct et visuel !
+
+---
+
+## Produit positif
+
+### Comment ça marche
+
+C’est une variante du produit matriciel.
+On calcule d’abord le **produit normal**, puis on transforme chaque élément en `1` si le résultat est **positif**, ou `0` sinon.
+
+### Pseudo-code
+
+```
+fonction produit_positif(A, B)
+    P ← produit_matrices(A, B)
+    C ← matrice de même taille que P
+    pour chaque ligne i
+        pour chaque colonne j
+            si P[i][j] > 0
+                C[i][j] ← 1
+            sinon
+                C[i][j] ← 0
+    retourner C
+```
+
+### Exemple
+
+```
+A = 1 -2
+    3  4
+
+B = 5 6
+    7 8
+
+Produit normal P = -9 -10
+                   43  50
+
+Produit positif C = 0 0
+                   1 1
+```
+
+> On transforme le produit en une sorte de **matrice “oui/non”** selon le signe des valeurs. C’est très pratique pour certaines applications logiques.
+
+
+
