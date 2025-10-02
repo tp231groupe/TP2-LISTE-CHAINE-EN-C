@@ -1,0 +1,70 @@
+README 鈥� Fonction deleteOccurrences
+
+馃幆 Objectif
+
+La fonction deleteOccurrences(L, V) parcourt une liste cha卯n茅e et
+supprime toutes les occurrences d鈥檜ne valeur donn茅e V. Elle retourne
+ensuite la nouvelle t锚te de la liste mise 脿 jour.
+
+------------------------------------------------------------------------
+
+鈿欙笍 Prototype
+
+    node* deleteOccurrences(node* L, int V);
+
+-   L : pointeur vers la t锚te de la liste cha卯n茅e.
+-   V : valeur 脿 rechercher et 脿 supprimer dans la liste.
+-   Retour : pointeur vers la nouvelle t锚te de la liste.
+
+------------------------------------------------------------------------
+
+馃攽 Description 茅tape par 茅tape
+
+1.  Initialisation :
+    -   Pr茅c茅dent 鈫� NULL
+    -   Courant 鈫� t锚te de la liste (L)
+2.  Parcours de la liste :
+    -   Tant que Courant n鈥檈st pas NULL, on compare sa valeur 脿 V.
+3.  Cas 1 鈥� Suppression 脿 la t锚te :
+    -   Si Courant.val == V et Pr茅c茅dent == NULL
+        鈫� on d茅place la t锚te L vers Courant.next.
+4.  Cas 2 鈥� Suppression en milieu ou fin :
+    -   Si Courant.val == V et Pr茅c茅dent != NULL
+        鈫� on relie Pr茅c茅dent.next 脿 Courant.next.
+5.  Lib茅ration m茅moire :
+    -   On stocke Courant dans Temp, puis on lib猫re ce n艙ud avec free().
+6.  Sinon (valeur diff茅rente de V) :
+    -   Avancer Pr茅c茅dent sur Courant.
+7.  Continuer :
+    -   Avancer Courant sur Courant.next.
+8.  Retourner la nouvelle t锚te L.
+
+------------------------------------------------------------------------
+
+馃柤锔� Sch茅ma simplifi茅
+
+Avant suppression (V = 3) :
+
+    L 鈫� [1] 鈫� [3] 鈫� [5] 鈫� [3] 鈫� [7] 鈫� NULL
+
+Apr猫s deleteOccurrences(L, 3) :
+
+    L 鈫� [1] 鈫� [5] 鈫� [7] 鈫� NULL
+
+------------------------------------------------------------------------
+
+鉁� Avantages
+
+-   Supprime toutes les occurrences en une seule passe (O(n)).
+-   G猫re correctement la suppression :
+    -   en t锚te
+    -   en milieu
+    -   en fin
+
+------------------------------------------------------------------------
+
+鈿狅笍 Points d鈥檃ttention
+
+-   Bien penser 脿 lib茅rer la m茅moire de chaque n艙ud supprim茅 avec
+    free().
+-   V茅rifier que la liste n鈥檈st pas vide avant l鈥檃ppel.
