@@ -4,7 +4,7 @@
 
 ## Introduction
 
-> « La structure des données est au cœur de l'efficacité algorithmique. La bonne organisation de l'information peut transformer un traitement lent en une opération quasi-instantanée. »
+> «Bad programmers worry about the code. Good programmers worry about data structures and theirs relationships ». Linus Torvald
 
 Ce projet s'inscrit dans le cadre du cours **INF231 : Technique de Conception d'Algorithmes et Structures de Données**. L'objectif est de maîtriser l'implémentation en langage **C** des opérations fondamentales sur diverses structures de listes chaînées.
 
@@ -35,7 +35,7 @@ projet-listes/
 │   ├── linkedList.h     # Prototypes et définitions des structures (node, list, doubleList)
 │   └── utils.h          # Prototypes des fonctions utilitaires
 │
-├── doc/                 # Documentation individuelle et rapports de suivi
+├── docs/                 # Documentation individuelle et rapports de suivi
 │   └── Matricule_Prenom-NOM.md # Cahier de suivi de chaque membre
 │
 └── README.md            # Descriptif du projet
@@ -250,3 +250,4 @@ Ce projet a été développé par le groupe de TD/TP, sous la supervision du Pr 
 | **Mar'yam MFOPIT** | 23V23H00 | Lead (intégration et test) | [https://github.com/maryam2379](https://github.com/maryam2379) |
 | **Philbert NGAMIZE** | 22T2944 | Membre (Insertion en tête et queue de liste chaînée circulaire) | [https://github.com/nik-p12](https://github.com/nik-p12) |
 | **Caleb KEMMOE** | 24H2300 | Membre (Insertion en queue de liste doublement chaînée circulaire) | [https://github.com/kemmoebugincaleb-cell](https://github.com/kemmoebugincaleb-cell) |
+| **Fadimatou NJAPNDOUNKE** | 23U2847 | Membre (Insertion en tête de liste doublement chaînée circulaire) | [https://github.com/kemmoebugincaleb-cell](https://github.com/NjapndounkeNchankouFadimatou) |

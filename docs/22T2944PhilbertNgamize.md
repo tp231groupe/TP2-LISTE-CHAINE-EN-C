@@ -1,4 +1,4 @@
-## **22T2944-Philbert-NGAMIZE.md**
+## **22T2944-Philbert-NGAMIZE**
 
 > Rapport d'avancement individuel (INF231 - TP/TD 2)
 

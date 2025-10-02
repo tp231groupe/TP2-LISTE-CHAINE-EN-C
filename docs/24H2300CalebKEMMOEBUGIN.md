@@ -1,4 +1,4 @@
-## **23H2300-Caleb-KEMMOEBUGIN.md**
+## **23H2300-Caleb-KEMMOEBUGIN**
 
 > Rapport d'avancement individuel (INF231 - TP/TD 2)
 

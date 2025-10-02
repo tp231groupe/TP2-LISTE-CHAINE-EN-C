@@ -1,4 +1,4 @@
-## **23V2414-Mar'yam-MFOPIT MVU.md**
+## **23V2414-Mar'yam-MFOPIT**
 
 > Rapport d'avancement individuel (INF231 - TP/TD 2)
 
